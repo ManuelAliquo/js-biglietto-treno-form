@@ -18,13 +18,61 @@
     <title>Document</title>
   </head>
   <body>
-    <input id="passenger-km" placeholder="Distanza in 'Km'" type="number" />
-    <select id="passenger-age" name="age">
-      <option value="minorenne">Minorenne</option>
-      <option value="maggiorenne">Maggiorenne</option>
-      <option value="over-65">Over-65</option>
-    </select>
-    <button id="submit-btn">Invia</button>
+    <!-- FORM -->
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <form
+            id="passenger-form"
+            name="passenger-form"
+            class="d-flex flex-column align-items-start"
+          >
+            <div>
+              <label for="passenger-name">Inserisci Nome e Cognome:</label>
+              <input id="passenger-name" type="text" placeholder="Nome Cognome" />
+            </div>
+            <div>
+              <label for="passenger-km" class="">Inserisci la distanza che devi percorrere:</label>
+              <input id="passenger-km" class="" placeholder="In 'Km'" type="number" />
+            </div>
+            <div>
+              <label for="passenger-age" class="">Inserisci la tua fascia d'Età:</label>
+              <select id="passenger-age" class="" name="age">
+                <option value="Minorenne">Minorenne</option>
+                <option value="Maggiorenne">Maggiorenne</option>
+                <option value="Over-65">Over-65</option>
+              </select>
+            </div>
+            <button id="submit-btn">Invia</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- separatore temporaneo -->
+    <div class="my-3"></div>
+    <!-- TICKET -->
+    <div class="row">
+      <div class="col-4">
+        <div class="card d-flex flex-row gap-4">
+          <div>
+            <div>Nome Passeggero</div>
+            <div id="printed-name">...</div>
+          </div>
+          <div>
+            <div>Distanza:</div>
+            <div id="printed-km">...</div>
+          </div>
+          <div>
+            <div>Biglietto:</div>
+            <div id="printed-age">...</div>
+          </div>
+          <div>
+            <div>Prezzo:</div>
+            <div id="printed-price">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
