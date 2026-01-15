@@ -18,57 +18,90 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- FORM -->
-    <div class="row">
-      <div class="col-4">
-        <div class="card">
-          <form
-            id="passenger-form"
-            name="passenger-form"
-            class="d-flex flex-column align-items-start"
-          >
-            <div>
-              <label for="passenger-name">Inserisci Nome e Cognome:</label>
-              <input id="passenger-name" type="text" placeholder="Nome Cognome" />
+    <div class="container py-5 fw-semibold">
+      <!-- FORM -->
+      <div class="ticket-generation">
+        <h1 class="h3 text-center">Genera il tuo biglietto</h1>
+        <form
+          id="passenger-form"
+          name="passenger-form"
+          class="row row-cols-lg-3 border rounded-4 py-3 mx-2"
+        >
+          <div class="col-12">
+            <label for="passenger-name" class="form-label">Inserisci Nome e Cognome:</label>
+            <div class="input-group">
+              <input
+                value="Manuel Aliquò"
+                id="passenger-name"
+                type="text"
+                placeholder="Nome Cognome"
+                class="form-control mb-3"
+                required
+              />
             </div>
-            <div>
-              <label for="passenger-km" class="">Inserisci la distanza che devi percorrere:</label>
-              <input id="passenger-km" class="" placeholder="In 'Km'" type="number" />
+          </div>
+          <div class="col-12">
+            <label for="passenger-km" class="form-label">Inserisci la percorrenza:</label>
+            <div class="input-group">
+              <input
+                value="100"
+                id="passenger-km"
+                type="number"
+                placeholder="In 'Km'"
+                class="form-control mb-3"
+                required
+              />
+              <span class="input-group-text mb-3">Km</span>
             </div>
-            <div>
-              <label for="passenger-age" class="">Inserisci la tua fascia d'Età:</label>
-              <select id="passenger-age" class="" name="age">
-                <option value="Minorenne">Minorenne</option>
-                <option value="Maggiorenne">Maggiorenne</option>
-                <option value="Over-65">Over-65</option>
-              </select>
-            </div>
-            <button id="submit-btn">Invia</button>
-          </form>
-        </div>
+          </div>
+          <div class="col-12">
+            <label for="passenger-age" class="form-label">Inserisci la tua fascia d'Età:</label>
+            <select id="passenger-age" name="age" class="form-select mb-3" required>
+              <option value="">Scegli tra:</option>
+              <option value="Minorenne" selected>Minorenne</option>
+              <option value="Maggiorenne">Maggiorenne</option>
+              <option value="Over-65">Over-65</option>
+            </select>
+          </div>
+          <button id="submit-btn" class="btn btn-danger rounded-pill mx-auto">Invia</button>
+        </form>
       </div>
-    </div>
-    <!-- separatore temporaneo -->
-    <div class="my-3"></div>
-    <!-- TICKET -->
-    <div class="row">
-      <div class="col-4">
-        <div class="card d-flex flex-row gap-4">
-          <div>
-            <div>Nome Passeggero</div>
-            <div id="printed-name">...</div>
+
+      <!-- TICKET -->
+      <div id="ticket" class="text-center fs-5 mt-4">
+        <h1 class="h3">Il tuo Biglietto</h1>
+        <div class="row row-cols-3 border rounded-4 mx-2 p-2">
+          <div class="col border">
+            <div>
+              <div>Passeggero:</div>
+              <div id="printed-name"></div>
+            </div>
           </div>
-          <div>
-            <div>Distanza:</div>
-            <div id="printed-km">...</div>
+          <div class="col border">
+            <div>
+              <div>Distanza:</div>
+              <div id="printed-km"></div>
+            </div>
           </div>
-          <div>
-            <div>Biglietto:</div>
-            <div id="printed-age">...</div>
+          <div class="col border">
+            <div>
+              <div>Offerta:</div>
+              <div id="printed-age"></div>
+            </div>
           </div>
-          <div>
+          <div
+            class="col border d-flex flex-column align-items-center justify-content-center gap-2"
+          >
             <div>Prezzo:</div>
-            <div id="printed-price">...</div>
+            <div id="printed-price"></div>
+          </div>
+          <div class="col border">
+            <img src="./img/qrcode.png" class="img-fluid border" alt="qr code" />
+          </div>
+          <div class="col border d-flex align-items-center justify-content-center">
+            <blockquote class="blockquote">
+              <p>Have a nice Trip!</p>
+            </blockquote>
           </div>
         </div>
       </div>
